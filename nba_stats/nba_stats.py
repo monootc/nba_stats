@@ -3,7 +3,7 @@ from datetime import datetime
 import re
 from dataclasses import dataclass, field
 from bs4 import BeautifulSoup
-from .constant import (
+from constant import (
     SeasonAvgTableOffset,
     GameTableOffset,
     TEAM_INFO_URL,
@@ -88,7 +88,7 @@ class Singleton(type):
     _instances = {}
     
     def __call__(cls, *args, **kwargs):
-        arg = args[0]
+        arg = args[0].title()
         if arg not in cls._instances:
             cls._instances[arg] = super(Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[arg]
@@ -400,7 +400,7 @@ class Team(metaclass=Singleton):
     """
 
     def __init__(self, name):
-        self.name = name
+        self.name = name.title()
         self._win = None
         self._loss = None
         self._pt = None
@@ -410,6 +410,9 @@ class Team(metaclass=Singleton):
         self._standing = None
         self._raw_data = None
         self._players = None
+
+    def __str__(self):
+        return self.name
 
     def _convert_name(self):
         data = self.name.split()

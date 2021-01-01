@@ -36,7 +36,7 @@ PLAYER_INFO_URL = 'https://sports.yahoo.com/nba/players/{player_id}'
 GAME_LOG_URL = 'https://sports.yahoo.com/nba/players/{player_id}/gamelog?selectedTable=0&season={year}'
 
 # last updated 1/1/2021
-{
+PLAYER_LU_TABLE = {
     "Marshall Brown": 5001,
     "Anthony Roberson": 4001,
     "Darrell Armstrong": 3001,
