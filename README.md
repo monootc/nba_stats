@@ -94,4 +94,17 @@ There are 2 main classes in this package
   * raw_data (BeautifulSoup object):    internal data for processing
   * players (list[Player]):             list of player objects
 
+## Example
+* ```
+  from nba_stats import nba_stats
+  player = nba_stats.Player('Stephen Curry')
+  player.get_yearly_data()
+  DataAttribute(names=['2020-21'], num_game='4', fg_made=8.3, fg_attempt=20.0, three_made=3.5, three_attempt=11.0, ft_made=6.5, ft_attempt=6.5, rebound=3.8, assist=7.0, turnover=4.3, steal=1.8, block=0.5, point=26.5)
+  player.get_avg_stats_by_opponent('CLE', year=2019)
+  DataAttribute(names=['@CLE'], num_game=1, fg_made=6.0, fg_attempt=14.0, three_made=1.0, three_attempt=3.0, ft_made=1.0, ft_attempt=2.0, rebound=6.0, assist=5.0, turnover=2.0, steal=0.0, block=0.0, point=14.0)
 
+  team = nba_stats.Team('Golden State Warriors')
+  team.pt
+  111.0
+  team.win
+  2

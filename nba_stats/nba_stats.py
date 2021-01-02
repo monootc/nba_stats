@@ -317,7 +317,7 @@ class Player(metaclass=Singleton):
         Return:
             a list of DataAttribute objects
         """
-        stats = self.get_recent_games_data(home_only, away_only, games, year)
+        stats = self.get_recent_games_data(game_type, home_only, away_only, games, year)
         if not stats:
             return DataAttribute(num_game=0)
         res = stats[0]
@@ -356,7 +356,7 @@ class Player(metaclass=Singleton):
         Return:
             DataAttribute object
         """
-        stats = self.get_data_by_opponent(oppo, year)
+        stats = self.get_data_by_opponent(oppo, game_type, year)
         if not stats:
             return DataAttribute(num_game=0)
         res = stats[0]
@@ -432,7 +432,7 @@ class Team(metaclass=Singleton):
         raw_data = requests.get(url)
         if raw_data.status_code != 200:
             raise Exception(f'Error getting data from {url=}')
-        self._raw_data = BeautifulSoup(raw_data.text)
+        self._raw_data = BeautifulSoup(raw_data.text, features="lxml")
         return self._raw_data
 
     @property
