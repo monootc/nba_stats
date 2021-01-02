@@ -266,7 +266,9 @@ class Player(metaclass=Singleton):
     
     def _get_year(self, year):
         if isinstance(year, str) and year.lower() == 'current':
-            year = datetime.now().year
+            # hot fix, 2021 data is not available yet
+            # year = datetime.now().year
+            year = 2020
         return int(year)
 
     def get_recent_games_data(self, game_type='all', home_only=False, away_only=False, games=5, year='current'):
