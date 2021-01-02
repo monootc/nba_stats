@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="example-pkg-YOUR-USERNAME-HERE", # Replace with your own username
-    version="0.0.1",
-    author="Example Author",
-    author_email="author@example.com",
-    description="A small example package",
+    name="py-nba-stats",
+    version="0.0.2",
+    author="Kelvin Hu",
+    author_email="kelvin.hu.1203@gmail.com",
+    description="A package for scraping NBA stats from yahoo",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/monootc/nba_stats",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

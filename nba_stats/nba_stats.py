@@ -3,7 +3,7 @@ from datetime import datetime
 import re
 from dataclasses import dataclass, field
 from bs4 import BeautifulSoup
-from constant import (
+from .constant import (
     SeasonAvgTableOffset,
     GameTableOffset,
     TEAM_INFO_URL,
